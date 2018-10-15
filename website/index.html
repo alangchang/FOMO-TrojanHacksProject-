@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>FOMO - JavaLab</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/stylish-portfolio.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <a class="menu-toggle rounded" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a class="js-scroll-trigger" href="#page-top">FOMO</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#page-top">Home</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#about">About</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#events">Map</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#contact">Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="masthead d-flex">
+    <div class="container text-center my-auto">
+      <h1 class="mb-1">F.O.M.O</h1>
+      <h3 class="mb-5">
+        <em>By Javalab</em>
+        <h4 class="mb-5">USC's Premier Career Opportunity Agenda</h4>
+      </h3>
+      <a class="btn btn-primary btn-xl js-scroll-trigger" href="#map">Find Events Near USC</a>
+    </div>
+    <div class="overlay"></div>
+  </header>
+
+  <!-- About -->
+  <!-- <section id="about">
+  <div class="container">
+  <div class="row">
+  <div class="col-lg-10 mx-auto">
+  <img src="img/lava.png" class="img-fluid" style="width:100%">
+  <hr class="mb-5" style="height:5px;border:none;color:black;background-color:black">
+</div>
+</div>
+</div>
+</section> -->
+
+<section class="content-section bg-primary text-white text-center" id="about">
+  <div class="container">
+    <div class="content-section-heading">
+      <h2 class="mb-5">What We Offer</h2>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+        <span class="service-icon rounded-circle mx-auto mb-3">
+          <i class="icon-screen-smartphone"></i>
+        </span>
+        <h4>
+          <strong>Responsive</strong>
+        </h4>
+        <p class="text-faded mb-0">Looks great on any screen size!</p>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+        <span class="service-icon rounded-circle mx-auto mb-3">
+          <i class="icon-map"></i>
+        </span>
+        <h4>
+          <strong>Interactive</strong>
+        </h4>
+        <p class="text-faded mb-0">Find event quickly on a map.</p>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+        <span class="service-icon rounded-circle mx-auto mb-3">
+          <i class="icon-pencil"></i>
+        </span>
+        <h4>
+          <strong>Customizable</strong>
+        </h4>
+        <p class="text-faded mb-0"><i class="fas fa-heart"></i> Filter your own events.
+        </p>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <span class="service-icon rounded-circle mx-auto mb-3">
+          <i class="icon-clock"></i>
+        </span>
+        <h4>
+          <strong>Real-time</strong>
+        </h4>
+        <p class="text-faded mb-0">Real-time data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Events -->
+<section class="content-section text-center" id="events">
+  <div class="container">
+    <div class="content-section-heading">
+      <h2 class="mb-4">Events Near USC</h2>
+      <hr class="mb-5" style="height:2px;border:none;color:black;background-color:black">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-7 map" id="map" style="width:auto;
+    height:auto;
+    margin: 0;
+    padding: 0;">
+    <script src="../data.js" ></script>
+    <script>
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 16,
+        center: {lat: 34.021177, lng: -118.284688},
+        styles: [
+          {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+          {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+          {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+          {
+            featureType: 'administrative.locality',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#d59563'}]
+          },
+          {
+            featureType: 'poi',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#d59563'}]
+          },
+          {
+            featureType: 'poi.park',
+            elementType: 'geometry',
+            stylers: [{color: '#263c3f'}]
+          },
+          {
+            featureType: 'poi.park',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#6b9a76'}]
+          },
+          {
+            featureType: 'road',
+            elementType: 'geometry',
+            stylers: [{color: '#38414e'}]
+          },
+          {
+            featureType: 'road',
+            elementType: 'geometry.stroke',
+            stylers: [{color: '#212a37'}]
+          },
+          {
+            featureType: 'road',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#9ca5b3'}]
+          },
+          {
+            featureType: 'road.highway',
+            elementType: 'geometry',
+            stylers: [{color: '#746855'}]
+          },
+          {
+            featureType: 'road.highway',
+            elementType: 'geometry.stroke',
+            stylers: [{color: '#1f2835'}]
+          },
+          {
+            featureType: 'road.highway',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#f3d19c'}]
+          },
+          {
+            featureType: 'transit',
+            elementType: 'geometry',
+            stylers: [{color: '#2f3948'}]
+          },
+          {
+            featureType: 'transit.station',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#d59563'}]
+          },
+          {
+            featureType: 'water',
+            elementType: 'geometry',
+            stylers: [{color: '#17263c'}]
+          },
+          {
+            featureType: 'water',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#515c6d'}]
+          },
+          {
+            featureType: 'water',
+            elementType: 'labels.text.stroke',
+            stylers: [{color: '#17263c'}]
+          }
+        ]
+      });
+      var geocoder = new google.maps.Geocoder();
+
+      for (var i=0; i<data.length; i++){
+        geocodeAddress(geocoder,map,data[i])
+      }
+    }
+
+    function geocodeAddress(geocoder, resultsMap, e_data) {
+      var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">'+e_data['event']+'</h1>'+
+      '<div id="bodyContent">'+'<p><b>Location: </b>'+e_data['location']+'</p>'+'<p><b>Address: </b>'+e_data['address']+
+      '<p><b>Time: </b>'+e_data['time']+' '+ e_data['weekday']+'</p>'+'<p><b>Date: </b>'+e_data['month']+' '+e_data['date']+'</p>'
+      '</div>'+
+      '</div>';
+
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+      geocoder.geocode({'address': e_data['address']}, function(results, status) {
+        if (status === 'OK') {
+          var marker = new google.maps.Marker({
+            map: resultsMap,
+            position: results[0].geometry.location,
+          });
+          marker.addListener('mouseover', function() {
+            infowindow.open(map, marker);
+          });
+          marker.addListener('mouseout', function() {
+            infowindow.close(map, marker);
+          });
+        } else {
+          alert('Geocode was not successful for the following reason: ' + status);
+        }
+      });
+    }
+    </script>
+    <script src="../config.js"></script>
+    <script>
+    var script = document.createElement('script');
+    script.src = "https://maps.googleapis.com/maps/api/js?key="+API_KEY+"&callback=initMap";
+    script.defer = true;
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(script, firstScriptTag);
+    </script>
+  </div>
+  <div class="col-sm-5">
+    <iframe src="https://calendar.google.com/calendar/embed?src=e78eb3hji5i4kclu0nlafa2fuc%40group.calendar.google.com&ctz=America%2FLos_Angeles" style="border: 0" width="100%" height="650" frameborder="0" scrolling="no"></iframe>
+  </div>
+</div>
+</section>
+
+<!-- Portfolio -->
+<section class="content-section bg-secondary" id="portfolio">
+  <div class="container">
+    <div class="content-section-heading text-center" style="color:#dae2ef">
+      <h2 class="mb-4">Team Portfolio</h2>
+      <hr class="mb-5" style="height:2px;border:none;color:#dae2ef;background-color:#dae2ef">
+    </div>
+    <div class="row no-gutters mb-3">
+      <div class="col-lg-4">
+        <a class="portfolio-item" href="https://www.linkedin.com/in/jackie-dong/">
+          <span class="caption">
+            <span class="caption-content">
+              <h2>Jackie Dong</h2>
+              <p class="mb-0">Back End</p>
+            </span>
+          </span>
+          <img class="img-fluid" src="img/portfolio-1.jpg" alt="">
+        </a>
+      </div>
+      <div class="col-lg-4">
+        <a class="portfolio-item" href="#">
+          <span class="caption">
+            <span class="caption-content">
+              <h2>Samuel lee</h2>
+              <p class="mb-0">Back End</p>
+            </span>
+          </span>
+          <img class="img-fluid" src="img/portfolio-2.jpg" alt="">
+        </a>
+      </div>
+      <div class="col-lg-4">
+        <a class="portfolio-item" href="#">
+          <span class="caption">
+            <span class="caption-content">
+              <h2>Alan Chang</h2>
+              <p class="mb-0">Back End</p>
+            </span>
+          </span>
+          <img class="img-fluid" src="img/portfolio-3.jpg" alt="">
+        </a>
+      </div>
+      <div class="col-lg-6">
+        <a class="portfolio-item" href="#">
+          <span class="caption">
+            <span class="caption-content">
+              <h2>Wlliam Yang</h2>
+              <p class="mb-0">Front End</p>
+            </span>
+          </span>
+          <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
+        </a>
+      </div>
+      <div class="col-lg-6">
+        <a class="portfolio-item" href="#">
+          <span class="caption">
+            <span class="caption-content">
+              <h2>Sean Vovan</h2>
+              <p class="mb-0">Front End</p>
+            </span>
+          </span>
+          <img class="img-fluid" src="img/portfolio-1.jpg" alt="">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="footer text-center" id="contact">
+  <div class="container">
+    <ul class="list-inline mb-5">
+      <li class="list-inline-item">
+        <a class="social-link rounded-circle text-white mr-3" href="https://www.facebook.com/AdmitUSC/">
+          <i class="icon-social-facebook"></i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="social-link rounded-circle text-white" href="https://github.com/alangcha/FOMO-TrojanHacksProject-">
+          <i class="icon-social-github"></i>
+        </a>
+      </li>
+    </ul>
+    <p class="text-muted small mb-0">Copyright &copy; JavaLab 2018</p>
+  </div>
+</footer>
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/stylish-portfolio.min.js"></script>
+
+</body>
+
+</html>
